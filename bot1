@@ -1,0 +1,15 @@
+const { Client, Intents } = require('discord.js');
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('messageCreate', message => {
+  if (message.content === '!hello') {
+    message.reply('Hello there!');
+  }
+});
+
+client.login('YMTE0NTAwNjcyMDc4NDAwNzE5Mg.GbScH4.LrHXbf1qX4gefzIK0O1rd7qaT6z7dUNpbEgEA4');
